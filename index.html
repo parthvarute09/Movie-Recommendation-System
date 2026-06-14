@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Recommender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-icon">🎬</div>
+      <h1 class="hero-title">Movie Recommender</h1>
+      <p class="hero-sub">Pick a movie you love — get 10 similar picks instantly</p>
+    </header>
+
+    <!-- SEARCH -->
+    <div class="search-wrap">
+      <div class="search-bar">
+        <input
+          id="movieInput"
+          type="text"
+          placeholder="e.g. Inception, The Dark Knight…"
+          autocomplete="off"
+          aria-label="Search for a movie"
+        />
+        <button id="getRecsBtn" aria-label="Get recommendations">
+          ✦ Recommend
+        </button>
+      </div>
+      <ul class="dropdown" id="dropdown" role="listbox" aria-label="Movie suggestions"></ul>
+    </div>
+
+    <!-- RESULTS -->
+    <main id="results"></main>
+
+  </div>
+
+  <!-- Pass movie list from Flask to JS -->
+  <script>
+    window.MOVIE_LIST = {{ movies | tojson }};
+  </script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
