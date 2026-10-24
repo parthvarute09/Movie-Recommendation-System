@@ -146,7 +146,6 @@ Movie-Recommendation-System/
 │
 ├── Movie_Recommendation.ipynb
 ├── Recc_system_tmdb.ipynb
-├── Movie_app.py
 ├── app.py
 ├── tmdb_5000_movies.csv
 ├── tmdb_5000_credits.csv
